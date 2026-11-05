@@ -1,864 +1,323 @@
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>하당의원 | HaDang Hospital</title>
-<meta name="description" content="전남 목포시 하당의원. 환자를 먼저 생각하는 진료를 제공합니다.">
-
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-<style>
-:root {
-  --blue: #1769aa;
-  --navy: #153b5b;
-  --light: #f2f7fb;
-  --text: #334155;
-}
-
-* { box-sizing: border-box; }
-
-html { scroll-behavior: smooth; }
-
-body {
-  font-family: 'Noto Sans KR', sans-serif;
-  color: var(--text);
-  margin: 0;
-}
-
-.navbar {
-  background: white;
-  padding: 18px 0;
-}
-
-.logo-mark {
-  width: 42px;
-  height: 42px;
-  border-radius: 12px;
-  background: var(--blue);
-  color: white;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 29px;
-  font-weight: 400;
-  margin-right: 10px;
-}
-
-.brand {
-  color: var(--navy);
-  font-size: 23px;
-  font-weight: 800;
-  text-decoration: none;
-}
-
-.brand small {
-  display: block;
-  font-size: 11px;
-  letter-spacing: 3px;
-  color: #718096;
-  font-weight: 500;
-}
-
-.nav-link {
-  color: #334155 !important;
-  font-weight: 500;
-  margin-left: 12px;
-}
-
-.nav-link:hover { color: var(--blue) !important; }
-
-.hero {
-  background: linear-gradient(120deg, #eaf4fc, #f7fbff);
-  padding: 115px 0;
-  min-height: 510px;
-  display: flex;
-  align-items: center;
-}
-
-.hero-label {
-  color: var(--blue);
-  font-weight: 700;
-  letter-spacing: 3px;
-  font-size: 13px;
-}
-
-.hero h1 {
-  color: var(--navy);
-  font-size: clamp(34px, 5vw, 53px);
-  line-height: 1.45;
-  font-weight: 800;
-  margin: 25px 0;
-}
-
-.hero p {
-  color: #64748b;
-  line-height: 1.9;
-  font-size: 17px;
-}
-
-.btn-main {
-  background: var(--blue);
-  color: white;
-  border-radius: 7px;
-  padding: 13px 27px;
-  text-decoration: none;
-  display: inline-block;
-  margin: 10px 5px 0 0;
-  font-weight: 600;
-}
-
-.btn-main:hover {
-  background: var(--navy);
-  color: white;
-}
-
-.btn-outline {
-  border: 1px solid var(--blue);
-  color: var(--blue);
-  border-radius: 7px;
-  padding: 13px 27px;
-  text-decoration: none;
-  display: inline-block;
-  margin-top: 10px;
-  font-weight: 600;
-}
-
-.hero-symbol {
-  width: 240px;
-  height: 240px;
-  border-radius: 50%;
-  background: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: auto;
-  box-shadow: 0 20px 60px rgba(30,80,120,.10);
-  color: var(--blue);
-  font-size: 130px;
-  font-weight: 300;
-}
-
-section { scroll-margin-top: 85px; }
-
-.section {
-  padding: 90px 0;
-}
-
-.section-light { background: var(--light); }
-
-.section-label {
-  color: var(--blue);
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 3px;
-  text-align: center;
-}
-
-.section-title {
-  color: var(--navy);
-  text-align: center;
-  font-size: 32px;
-  font-weight: 800;
-  margin: 13px 0 20px;
-}
-
-.section-desc {
-  text-align: center;
-  color: #64748b;
-  margin-bottom: 48px;
-  line-height: 1.8;
-}
-
-.about-box {
-  background: white;
-  padding: 35px;
-  border-radius: 14px;
-  line-height: 2;
-  height: 100%;
-}
-
-.medical-card {
-  background: white;
-  padding: 35px 27px;
-  border-radius: 14px;
-  height: 100%;
-  box-shadow: 0 5px 25px rgba(20,60,90,.04);
-  transition: .2s;
-}
-
-.medical-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 30px rgba(20,60,90,.09);
-}
-
-.card-icon {
-  width: 60px;
-  height: 60px;
-  background: #eaf4fc;
-  border-radius: 15px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: var(--blue);
-  font-size: 28px;
-  margin-bottom: 22px;
-}
-
-.medical-card h3 {
-  color: var(--navy);
-  font-size: 21px;
-  font-weight: 700;
-  margin-bottom: 17px;
-}
-
-.medical-card p {
-  color: #64748b;
-  line-height: 1.9;
-  font-size: 14px;
-}
-
-.doctor-box {
-  background: white;
-  border-radius: 14px;
-  padding: 45px 25px;
-  text-align: center;
-}
-
-.doctor-photo {
-  width: 110px;
-  height: 110px;
-  border-radius: 50%;
-  background: #eaf4fc;
-  margin: 0 auto 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 42px;
-  color: var(--blue);
-}
-
-.info-box {
-  background: white;
-  border-radius: 14px;
-  padding: 30px;
-  height: 100%;
-}
-
-.info-box h4 {
-  color: var(--navy);
-  font-weight: 700;
-  margin-bottom: 20px;
-}
-
-.info-row {
-  padding: 12px 0;
-  border-bottom: 1px solid #edf1f5;
-  line-height: 1.8;
-}
-
-.info-row:last-child { border: none; }
-
-.call-box {
-  background: var(--navy);
-  color: white;
-  padding: 48px 20px;
-  text-align: center;
-}
-
-.call-box a {
-  color: white;
-  font-size: 30px;
-  font-weight: 800;
-  text-decoration: none;
-}
-
-footer {
-  background: #102d46;
-  color: #d2dfeb;
-  padding: 35px 0;
-  font-size: 13px;
-  line-height: 2;
-}
-
-@media(max-width:768px) {
-  .hero {
-    padding: 75px 0;
-    text-align: center;
-  }
-
-  .hero-symbol {
-    width: 150px;
-    height: 150px;
-    font-size: 85px;
-    margin-top: 45px;
-  }
-
-  .section { padding: 65px 0; }
-
-  .section-title { font-size: 27px; }
-
-  .brand { font-size: 19px; }
-
-  .nav-link {
-    margin-left: 0;
-    padding: 12px 0;
-  }
-}
-  
-/* 하당의원 실제 사진 */
-.hero-photo {
-  width: 100%;
-  height: 340px;
-  object-fit: cover;
-  object-position: center 55%;
-  border-radius: 18px;
-  box-shadow: 0 15px 35px rgba(20,60,90,.15);
-}
-
-.clinic-gallery {
-  padding: 75px 0;
-  background: #fff;
-}
-
-.clinic-gallery img {
-  width: 100%;
-  height: 300px;
-  object-fit: cover;
-  border-radius: 14px;
-  box-shadow: 0 8px 25px rgba(20,60,90,.10);
-}
-
-.clinic-gallery h3 {
-  color: #153b5b;
-  font-size: 20px;
-  font-weight: 700;
-  margin-top: 18px;
-}
-
-.clinic-gallery p {
-  color: #64748b;
-  font-size: 14px;
-}
-
-@media(max-width:768px) {
-  .hero-photo {
-    height: 260px;
-    margin-top: 25px;
-  }
-
-  .clinic-gallery img {
-    height: 250px;
-  }
-}
-
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="전라남도 목포시 하당의원. 마취통증의학과 및 피부 진료 안내, 진료시간과 오시는 길을 확인하세요.">
+  <meta name="theme-color" content="#0b5596">
+  <title>하당의원 | HaDang Hospital</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --blue:#0866b2; --blue-dark:#103b66; --navy:#102f50;
+      --pale:#edf6ff; --text:#172b45; --muted:#62748a;
+      --line:#dce8f4; --white:#fff; --shadow:0 12px 34px rgba(21,65,105,.10);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:"Noto Sans KR",sans-serif;color:var(--text);background:#fff}
+    a{color:inherit}
+    .container{width:min(1240px,calc(100% - 44px));margin:auto}
+    .site-header{height:88px;background:rgba(255,255,255,.97);display:flex;align-items:center;position:sticky;top:0;z-index:20;box-shadow:0 3px 18px rgba(20,55,90,.06)}
+    .header-inner{display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{display:flex;align-items:center;gap:12px;text-decoration:none;flex-shrink:0}
+    .brand-mark{width:48px;height:48px;display:block}
+    .brand-en{font-size:17px;line-height:1.15;font-weight:800;color:#14538e;letter-spacing:.1px}
+    .brand-ko{display:block;font-size:25px;line-height:1.2;font-weight:900;color:#123d69;letter-spacing:-1.3px}
+    .main-nav{display:flex;align-items:center;gap:clamp(16px,2.4vw,36px)}
+    .main-nav a{text-decoration:none;font-weight:700;font-size:15px;color:#233c59;white-space:nowrap}
+    .main-nav a:hover{color:var(--blue)}
+    .call-pill{background:var(--blue);color:white!important;text-decoration:none;border-radius:30px;padding:13px 22px;font-weight:800;white-space:nowrap;box-shadow:0 7px 18px rgba(8,102,178,.18)}
+    .menu-toggle{display:none;border:0;background:#eef6fd;border-radius:10px;padding:10px 12px;font-size:22px;color:var(--blue)}
+    .hero{position:relative;min-height:370px;display:flex;align-items:center;overflow:hidden;background:linear-gradient(90deg,rgba(231,244,255,.97) 0%,rgba(231,244,255,.90) 44%,rgba(231,244,255,.18) 100%),url("clinic-exterior.jpg") center 42%/cover no-repeat}
+    .hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(239,247,255,.16),transparent 65%);pointer-events:none}
+    .hero-content{position:relative;z-index:1;padding:58px 0 62px;max-width:680px}
+    .eyebrow{font-size:15px;font-weight:800;color:var(--blue);letter-spacing:2px}
+    .hero h1{font-size:clamp(40px,5.2vw,66px);line-height:1.18;letter-spacing:-2.8px;color:#104b84;margin:14px 0 18px;font-weight:900}
+    .hero p{font-size:18px;line-height:1.7;color:#244969;margin:0 0 25px;font-weight:500}
+    .actions{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;padding:13px 23px;border-radius:28px;font-weight:800;font-size:15px}
+    .btn-primary{background:var(--blue);color:#fff}
+    .btn-outline{border:1.5px solid var(--blue);color:#14538e;background:rgba(255,255,255,.6)}
+    .quick-section{padding:24px 0 18px;background:#f5f9fd}
+    .quick-grid{display:grid;grid-template-columns:1fr 1fr 1.22fr;gap:16px}
+    .quick-card{min-height:220px;border:1px solid var(--line);border-radius:13px;overflow:hidden;background:#fff;position:relative;box-shadow:0 4px 15px rgba(21,65,105,.04)}
+    .service-card{padding:25px 26px;background-position:center;background-size:cover}
+    .service-card:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(255,255,255,.97),rgba(255,255,255,.82) 53%,rgba(255,255,255,.15))}
+    .service-card>*{position:relative;z-index:1}
+    .service-icon{width:56px;height:56px;border-radius:50%;background:#dceeff;color:var(--blue);display:grid;place-items:center;font-size:27px;font-weight:700;margin-bottom:12px}
+    .quick-card h2{font-size:24px;color:#173c65;margin:0 0 10px;font-weight:900}
+    .quick-card p{font-size:15px;line-height:1.65;color:#4d6279;margin:0 0 12px}
+    .text-link{color:var(--blue);font-weight:800;text-decoration:none}
+    .doctor-card{padding:23px 24px;background:linear-gradient(110deg,#fff 0%,#f1f8ff 100%);display:flex;align-items:center;gap:14px}
+    .doctor-copy{position:relative;z-index:1;flex:1}
+    .doctor-kicker{font-size:14px;font-weight:800;color:#173c65;margin-bottom:12px}
+    .doctor-name{font-size:23px;font-weight:900;color:#152f4c;margin-bottom:10px}
+    .doctor-name small{font-size:15px;color:#315779}
+    .doctor-list{padding-left:17px;margin:0;font-size:12.5px;line-height:1.75;color:#314a66}
+    .doctor-placeholder{width:112px;height:150px;flex-shrink:0;border-radius:60px 60px 12px 12px;background:linear-gradient(145deg,#d7eaff,#f8fbff);display:grid;place-items:center;color:#1767a9;font-size:46px;font-weight:900;border:1px solid #d5e6f5}
+    .info-strip{padding:4px 0 25px;background:#f5f9fd}
+    .info-grid{display:grid;grid-template-columns:1.05fr 1.05fr 1fr;gap:16px}
+    .info-tile{min-height:142px;border-radius:12px;padding:22px 24px;display:flex;align-items:center;gap:17px;overflow:hidden}
+    .hours-tile,.contact-tile{background:linear-gradient(125deg,#14558c,#102f50);color:#fff}
+    .location-tile{background:linear-gradient(100deg,#e7f3ff,#fff);border:1px solid #d5e6f5;position:relative}
+    .tile-icon{font-size:37px;flex-shrink:0}
+    .tile-content{min-width:0;flex:1}
+    .tile-content h3{font-size:19px;margin:0 0 7px;font-weight:900}
+    .tile-content p{font-size:13px;line-height:1.65;margin:0;color:inherit}
+    .tile-content strong{font-size:15px}
+    .tile-link{font-size:12px;font-weight:800;text-decoration:none;border:1px solid currentColor;border-radius:20px;padding:8px 12px;white-space:nowrap}
+    .location-tile .tile-content{position:relative;z-index:1}
+    .location-tile:after{content:"";position:absolute;right:-8px;bottom:-34px;width:48%;height:130%;background:url("clinic-exterior.jpg") center/cover no-repeat;opacity:.48;mask-image:linear-gradient(90deg,transparent,#000 38%)}
+    .section{padding:76px 0}
+    .section-soft{background:#f5f9fd}
+    .section-heading{text-align:center;margin-bottom:36px}
+    .section-heading .eyebrow{font-size:12px}
+    .section-heading h2{font-size:32px;color:#173c65;margin:8px 0 10px;font-weight:900}
+    .section-heading p{color:var(--muted);margin:0;line-height:1.7}
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+    .about-box{padding:30px;border:1px solid var(--line);border-radius:14px;background:#fff;line-height:1.9}
+    .about-box h3{color:#14558c;margin:0 0 12px;font-size:21px}
+    .about-box p{color:#52677d;margin:0}
+    .gallery-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+    .gallery-item{background:#fff;border-radius:14px;overflow:hidden;box-shadow:var(--shadow)}
+    .gallery-item img{width:100%;height:320px;display:block;object-fit:cover}
+    .gallery-caption{padding:19px 22px}
+    .gallery-caption h3{margin:0 0 5px;color:#173c65;font-size:19px}
+    .gallery-caption p{margin:0;color:var(--muted);font-size:14px}
+    .schedule-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+    .panel{background:#fff;border:1px solid var(--line);border-radius:14px;padding:28px;box-shadow:0 5px 20px rgba(21,65,105,.04)}
+    .panel h3{color:#173c65;font-size:22px;margin:0 0 20px}
+    .time-row{display:flex;justify-content:space-between;gap:12px;padding:15px 0;border-bottom:1px solid #e8eef5;font-size:15px}
+    .time-row:last-of-type{border-bottom:0}
+    .time-row strong{color:#173c65}
+    .closed{color:#d34b4b!important}
+    .note{font-size:13px;color:var(--muted);line-height:1.7;margin:14px 0 0}
+    .map-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}
+    .map-btn{display:inline-flex;text-decoration:none;padding:12px 18px;border-radius:8px;background:var(--blue);color:#fff;font-weight:800;font-size:14px}
+    .map-btn.secondary{background:#eaf4fd;color:#14538e}
+    .footer{background:#102f50;color:#d9e8f6;padding:30px 0}
+    .footer-inner{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    .footer-brand{font-size:19px;font-weight:900;color:#fff}
+    .footer p{margin:5px 0 0;font-size:13px;line-height:1.7}
+    .copyright{font-size:12px;color:#b9cde0}
+    @media(max-width:980px){
+      .main-nav{gap:13px}.main-nav a{font-size:13px}.call-pill{padding:11px 15px;font-size:13px}
+      .quick-grid{grid-template-columns:1fr 1fr}.doctor-card{grid-column:1/-1}
+      .info-grid{grid-template-columns:1fr 1fr}.contact-tile{grid-column:1/-1}
+    }
+    @media(max-width:700px){
+      .container{width:min(100% - 30px,560px)}
+      .site-header{height:auto;min-height:74px;padding:10px 0}
+      .brand-mark{width:41px;height:41px}.brand-en{font-size:14px}.brand-ko{font-size:21px}
+      .menu-toggle{display:block}
+      .header-inner{flex-wrap:wrap}
+      .main-nav{display:none;order:3;width:100%;flex-direction:column;align-items:stretch;gap:0;padding:8px 0 5px}
+      .main-nav.open{display:flex}
+      .main-nav a{padding:11px 5px;border-top:1px solid #edf2f7;font-size:14px}
+      .header-call{display:none}
+      .hero{min-height:390px;background-position:58% center}
+      .hero-content{padding:52px 0}
+      .hero h1{font-size:43px;letter-spacing:-2px}
+      .hero p{font-size:15px}
+      .quick-grid,.info-grid,.about-grid,.gallery-grid,.schedule-grid{grid-template-columns:1fr}
+      .quick-card{min-height:210px}
+      .doctor-card{grid-column:auto;min-height:235px}
+      .doctor-placeholder{width:92px;height:130px}
+      .info-tile{min-height:130px}
+      .contact-tile{grid-column:auto}
+      .section{padding:58px 0}
+      .section-heading h2{font-size:27px}
+      .gallery-item img{height:250px}
+      .time-row{font-size:14px}
+      .footer-inner{align-items:flex-start;flex-direction:column}
+    }
+  </style>
 </head>
-
 <body>
-
-<!-- 상단 메뉴 -->
-<nav class="navbar navbar-expand-lg sticky-top shadow-sm">
-<div class="container">
-
-<a class="brand d-flex align-items-center" href="#home">
-  <span class="logo-mark">
-<svg viewBox="0 0 64 64" width="42" height="42">
-  <rect x="24" y="3" width="16" height="58"
-        rx="4" fill="#1769aa"/>
-  <rect x="3" y="24" width="58" height="16"
-        rx="4" fill="#1769aa"/>
-  <path d="M39 15 C55 18 54 31 39 38
-           C30 42 23 47 20 55"
-        fill="none" stroke="white"
-        stroke-width="5" stroke-linecap="round"/>
-</svg>
-</span>
-  <span>
-    HaDang Hospital
-    <small>하당의원</small>
-  </span>
-</a>
-
-<button class="navbar-toggler" type="button"
-data-bs-toggle="collapse" data-bs-target="#menu">
-  <span class="navbar-toggler-icon"></span>
-</button>
-
-<div class="collapse navbar-collapse" id="menu">
-<ul class="navbar-nav ms-auto align-items-lg-center">
-
-<li class="nav-item"><a class="nav-link" href="#about">병원소개</a></li>
-<li class="nav-item"><a class="nav-link" href="#pain">마취통증 진료</a></li>
-<li class="nav-item"><a class="nav-link" href="#skin">피부 진료</a></li>
-<li class="nav-item"><a class="nav-link" href="#doctor">의료진 소개</a></li>
-<li class="nav-item"><a class="nav-link" href="#info">진료시간·오시는 길</a></li>
-
-<li class="nav-item">
-<a class="btn-main ms-lg-3" href="tel:0619807500">전화 문의</a>
-</li>
-
-</ul>
-</div>
-</div>
-</nav>
-
-<!-- 메인 화면 -->
-<section class="hero" id="home">
-<div class="container">
-<div class="row align-items-center">
-
-<div class="col-lg-7">
-<div class="hero-label">HADANG HOSPITAL</div>
-
-<h1>
-환자를 먼저 생각하는 진료<br>
-건강한 내일을 함께합니다.
-</h1>
-
-<p>
-신뢰와 정성을 바탕으로<br>
-환자 한 분 한 분에게 최선을 다하는 하당의원입니다.
-</p>
-
-<a href="#pain" class="btn-main">진료 안내</a>
-<a href="#info" class="btn-outline">오시는 길</a>
-</div>
-
-<div class="col-lg-5">
-<img
-src="KakaoTalk_20261023_141005877_10.jpg"
-alt="하당의원 실제 외관"
-class="hero-photo"></div>
-
-</div>
-</div>
-</section>
-
-<!-- 하당의원 실제 시설 사진 -->
-<section class="clinic-gallery">
-<div class="container">
-
-<div class="section-label">OUR CLINIC</div>
-<h2 class="section-title">하당의원을 소개합니다</h2>
-
-<p class="section-desc">
-편안하고 쾌적한 진료 환경을 위해 노력합니다.
-</p>
-
-<div class="row g-4">
-
-<div class="col-md-6">
-<img
-src="KakaoTalk_20261105_115950217_04.jpg"
-alt="하당의원 내부 복도"
-loading="lazy">
-
-<h3>쾌적한 병원 환경</h3>
-<p>편안하게 진료받으실 수 있는 하당의원의 내부 공간입니다.</p>
-</div>
-
-<div class="col-md-6">
-<img
-src="KakaoTalk_20261105_115950217.jpg"
-alt="하당의원 접수 및 대기 공간"
-loading="lazy">
-
-<h3>접수 및 대기 공간</h3>
-<p>환자분들을 위한 접수 및 대기 공간입니다.</p>
-</div>
-
-</div>
-</div>
-</section>
-
-<!-- 병원 소개 -->
-<section class="section" id="about">
-<div class="container">
-
-<div class="section-label">ABOUT US</div>
-<h2 class="section-title">병원 소개</h2>
-
-<p class="section-desc">
-환자의 건강과 행복을 소중하게 생각합니다.
-</p>
-
-<div class="row g-4">
-<div class="col-lg-6">
-<div class="about-box">
-<h4 style="color:#1769aa;font-weight:700;">
-하당의원을 찾아주셔서 감사합니다.
-</h4>
-<p>
-하당의원은 환자 한 분 한 분의 이야기에 귀 기울이며
-정확한 진료와 세심한 의료서비스를 위해 노력합니다.
-</p>
-<p>
-편안하고 신뢰할 수 있는 진료 환경을 바탕으로
-지역 주민의 건강을 함께 지켜나가겠습니다.
-</p>
-</div>
-</div>
-
-<div class="col-lg-6">
-<div class="about-box">
-<h4 style="color:#1769aa;font-weight:700;">
-병원장 인사말
-</h4>
-<p>
-안녕하십니까. 하당의원을 찾아주셔서 감사합니다.
-</p>
-<p>
-환자분들의 건강을 최우선으로 생각하며,
-늘 겸손한 자세로 진료에 임하겠습니다.
-여러분이 믿고 찾을 수 있는 의료기관이 되도록
-최선을 다하겠습니다.
-</p>
-<p>감사합니다.</p>
-<p><strong>하당의원 병원장</strong></p>
-</div>
-</div>
-</div>
-</div>
-</section>
-
-<!-- 마취통증 진료 -->
-<section class="section section-light" id="pain">
-<div class="container">
-
-<div class="section-label">PAIN CARE</div>
-<h2 class="section-title">마취통증 진료</h2>
-
-<p class="section-desc">
-통증에 대한 세심한 상담과 진료를 제공합니다.
-</p>
-
-<div class="row g-4">
-
-<div class="col-md-4">
-<div class="medical-card">
-<div class="card-icon">✚</div>
-<h3>통증 상담</h3>
-<p>
-통증의 부위와 양상, 지속 기간 등을 확인하고
-환자 상태에 맞는 진료 방향을 상담합니다.
-</p>
-</div>
-</div>
-
-<div class="col-md-4">
-<div class="medical-card">
-<div class="card-icon">♡</div>
-<h3>통증 진료</h3>
-<p>
-환자 개개인의 증상과 상태를 고려하여
-적절한 진료 계획을 안내합니다.
-</p>
-</div>
-</div>
-
-<div class="col-md-4">
-<div class="medical-card">
-<div class="card-icon">＋</div>
-<h3>맞춤 진료 상담</h3>
-<p>
-진료 과정과 치료 방법에 대해 충분히 설명하고
-환자와 함께 진료 방향을 결정합니다.
-</p>
-</div>
-</div>
-
-</div>
-</div>
-</section>
-
-<!-- 피부 진료 -->
-<section class="section" id="skin">
-<div class="container">
-
-<div class="section-label">SKIN CARE</div>
-<h2 class="section-title">피부 진료</h2>
-
-<p class="section-desc">
-피부 상태를 살펴보고 개인별 증상에 맞춰 상담합니다.
-</p>
-
-<div class="row g-4">
-
-<div class="col-md-4">
-<div class="medical-card">
-<div class="card-icon">✧</div>
-<h3>피부 상담</h3>
-<p>
-피부 상태와 고민을 확인하고
-필요한 진료에 대해 상담합니다.
-</p>
-</div>
-</div>
-
-<div class="col-md-4">
-<div class="medical-card">
-<div class="card-icon">◈</div>
-<h3>피부 건강 관리</h3>
-<p>
-개인의 피부 상태와 특성을 고려하여
-피부 건강 관리 방향을 안내합니다.
-</p>
-</div>
-</div>
-
-<div class="col-md-4">
-<div class="medical-card">
-<div class="card-icon">♡</div>
-<h3>개별 진료 안내</h3>
-<p>
-피부 증상과 상태에 따라
-필요한 진료 내용을 안내합니다.
-</p>
-</div>
-</div>
-
-</div>
-</div>
-</section>
-
-<!-- 의료진 소개 -->
-<section class="section section-light" id="doctor">
-<div class="container">
-
-<div class="section-label">MEDICAL TEAM</div>
-<h2 class="section-title">의료진 소개</h2>
-
-<p class="section-desc">
-풍부한 학문적 경험과 전문성을 바탕으로
-환자 중심의 진료를 실천합니다.
-</p>
-
-<div class="row justify-content-center">
-<div class="col-lg-9">
-
-<div class="doctor-box text-start p-4 p-md-5">
-
-<div class="row align-items-center">
-
-<div class="col-md-3 text-center mb-4 mb-md-0">
-<div class="doctor-photo"
-style="width:140px;height:140px;font-size:48px;">
-박
-</div>
-<div class="fw-bold mt-3"
-style="color:#153b5b;font-size:19px;">
-박용남
-</div>
-<div style="color:#1769aa;font-weight:600;">
-대표원장
-</div>
-</div>
-
-<div class="col-md-9">
-
-<div class="section-label text-start mb-2">
-DIRECTOR PROFILE
-</div>
-
-<h3 style="color:#153b5b;font-weight:800;">
-박용남 대표원장
-</h3>
-
-<p class="text-muted mb-4">
-HaDang Hospital · 하당의원
-</p>
-
-<h5 class="fw-bold mb-3"
-style="color:#1769aa;">
-학력 및 전문 경력
-</h5>
-
-<ul style="line-height:2.1;color:#475569;padding-left:20px;">
-
-<li>
-서울대학교 대학원 의학과 졸업
-(박사 수료)
-</li>
-
-<li>
-의사 면허 취득 (보건복지부)
-</li>
-
-<li>
-동국대학교 및 순천향대학교 의학과 강사
-(의공학, 의료정보)
-</li>
-
-<li>
-서울대학교병원·대한의사협회
-의료경영과정 AHP 1기 수료
-(최우등상 수상)
-</li>
-
-<li>
-KAIST 진대제 AMP 3기 과정 수료
-</li>
-
-</ul>
-
-</div>
-</div>
-</div>
-
-</div>
-</div>
-</div>
-</section>
-
-
-<!-- 진료시간 및 오시는 길 -->
-<section class="section section-light" id="info">
-<div class="container">
-
-<div class="section-label">INFORMATION</div>
-<h2 class="section-title">진료시간 및 오시는 길</h2>
-
-<p class="section-desc">
-하당의원 방문 전 진료시간과 위치를 확인해 주세요.
-</p>
-
-<div class="row g-4">
-
-<!-- 진료시간 -->
-<div class="col-lg-6">
-<div class="info-box">
-
-<h4>진료시간 안내</h4>
-
-<div class="info-row">
-<strong>평일 (월요일 ~ 금요일)</strong>
-<div class="d-flex justify-content-between mt-2">
-<span>진료시간</span>
-<strong>09:00 - 18:00</strong>
-</div>
-<div class="d-flex justify-content-between">
-<span>휴게시간</span>
-<strong>12:00 - 14:00</strong>
-</div>
-<div class="d-flex justify-content-between">
-<span>접수마감</span>
-<strong style="color:#1769aa;">17:30</strong>
-</div>
-</div>
-
-<div class="info-row">
-<strong>토요일</strong>
-<div class="d-flex justify-content-between mt-2">
-<span>진료시간</span>
-<strong>09:00 - 13:00</strong>
-</div>
-<div class="d-flex justify-content-between">
-<span>접수마감</span>
-<strong style="color:#1769aa;">12:30</strong>
-</div>
-</div>
-
-<div class="info-row">
-<strong>일요일 및 공휴일</strong>
-<div class="mt-2" style="color:#dc3545;font-weight:700;">
-휴진
-</div>
-</div>
-
-<p class="small text-muted mt-3 mb-0">
-※ 접수 마감시간을 확인하시고 내원해 주세요.
-</p>
-
-</div>
-</div>
-
-<!-- 오시는 길 -->
-<div class="col-lg-6">
-<div class="info-box">
-
-<h4>오시는 길</h4>
-
-<div class="info-row">
-<strong>병원명</strong><br>
-하당의원
-</div>
-
-<div class="info-row">
-<strong>주소</strong><br>
-전라남도 목포시 부흥로 25
-</div>
-
-<div class="info-row">
-<strong>대표전화</strong><br>
-<a href="tel:0619807500"
-style="color:#1769aa;font-weight:700;font-size:20px;">
-061-980-7500
-</a>
-</div>
-
-<div class="mt-4">
-
-<a class="btn-main"
-href="https://map.naver.com/p/search/전라남도%20목포시%20부흥로%2025"
-target="_blank"
-rel="noopener noreferrer">
-📍 네이버 지도에서 위치 확인
-</a>
-
-<a class="btn-outline"
-href="tel:0619807500">
-☎ 전화 문의
-</a>
-
-</div>
-
-<p class="small text-muted mt-3 mb-0">
-네이버 지도에서 병원 위치와 길찾기를 확인하실 수 있습니다.
-</p>
-
-</div>
-</div>
-
-</div>
-</div>
-</section>
-
-
-<!-- 전화 문의 -->
-<div class="call-box">
-<p class="mb-2">하당의원 진료 및 문의</p>
-<a href="tel:0619807500">061-980-7500</a>
-<p class="mt-3 mb-0">전화로 문의해 주세요.</p>
-</div>
-
-<!-- 하단 -->
-<footer>
-<div class="container">
-<h5 class="text-white fw-bold">HaDang Hospital · 하당의원</h5>
-<p class="mb-1">주소 : 전라남도 목포시 부흥로 25</p>
-<p class="mb-1">대표전화 : 061-980-7500</p>
-<p class="mb-0">
-Copyright © HaDang Hospital. All Rights Reserved.
-</p>
-</div>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="#home" aria-label="하당의원 홈">
+      <svg class="brand-mark" viewBox="0 0 64 64" role="img" aria-label="하당의원 로고">
+        <path d="M25 4c-4 0-7 3-7 7v12H7c-4 0-7 3-7 7v5c0 4 3 7 7 7h11v12c0 4 3 7 7 7h6V42h8c9 0 17-6 17-15 0-8-7-14-16-14h-2V4H25z" fill="#0967b5"/>
+        <path d="M34 14c12 0 22 5 22 14 0 8-8 13-18 16-9 3-16 7-17 15 7-7 16-8 24-12 10-5 17-11 17-20C62 16 49 7 34 7z" fill="#16477a"/>
+        <path d="M24 39h9c8 0 14-4 14-10 0-4-3-7-8-8 2 3 2 6-1 9-3 3-8 4-14 4z" fill="#fff" opacity=".95"/>
+      </svg>
+      <span><span class="brand-en">HaDang Hospital</span><span class="brand-ko">하당의원</span></span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="메뉴 열기" aria-expanded="false">☰</button>
+    <nav class="main-nav" id="mainNav">
+      <a href="#about">병원소개</a>
+      <a href="#pain">마취통증 진료</a>
+      <a href="#skin">피부 진료</a>
+      <a href="#doctor">의료진 소개</a>
+      <a href="#information">진료시간·오시는 길</a>
+    </nav>
+    <a class="call-pill header-call" href="tel:0619807500">☎ &nbsp;061-980-7500</a>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="home">
+    <div class="container">
+      <div class="hero-content">
+        <div class="eyebrow">HADANG HOSPITAL</div>
+        <h1>환자를 먼저 생각하는<br>하당의원</h1>
+        <p>정확한 진료와 따뜻한 마음으로<br>언제나 함께하겠습니다.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="#pain">진료 안내&nbsp; ›</a>
+          <a class="btn btn-outline" href="#information">오시는 길&nbsp; ›</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="quick-section" aria-label="주요 안내">
+    <div class="container quick-grid">
+      <article class="quick-card service-card" id="pain" style="background-image:url('pain-medicine.jpg')">
+        <div class="service-icon">✚</div>
+        <h2>마취통증의학과</h2>
+        <p>목·어깨·허리 등 통증의 원인과<br>증상을 살펴 진료를 안내합니다.</p>
+        <a class="text-link" href="#pain-detail">진료 안내　›</a>
+      </article>
+      <article class="quick-card service-card" id="skin" style="background-image:url('skin-care.jpg')">
+        <div class="service-icon">✧</div>
+        <h2>피부 진료</h2>
+        <p>피부 상태와 고민을 살펴<br>맞춤 진료를 상담합니다.</p>
+        <a class="text-link" href="#skin-detail">진료 안내　›</a>
+      </article>
+      <article class="quick-card doctor-card" id="doctor">
+        <div class="doctor-copy">
+          <div class="doctor-kicker">의료진 소개</div>
+          <div class="doctor-name">박용남 <small>대표원장</small></div>
+          <ul class="doctor-list">
+            <li>서울대학교 대학원 의학과 졸업 (박사 수료)</li>
+            <li>의사 면허 취득 (보건복지부)</li>
+            <li>동국대·순천향 의학과 강사 (의공학, 의료정보)</li>
+            <li>서울대학교병원·대한의사협회 의료경영과정 AHP 1기 수료 (최우등상)</li>
+            <li>KAIST 진대제 AMP 3기 과정 수료</li>
+          </ul>
+        </div>
+        <div class="doctor-placeholder" aria-label="대표원장 사진 준비 중">박</div>
+      </article>
+    </div>
+  </section>
+
+  <section class="info-strip">
+    <div class="container info-grid">
+      <div class="info-tile hours-tile">
+        <div class="tile-icon">▦</div>
+        <div class="tile-content">
+          <h3>진료시간 안내</h3>
+          <p>평일　<strong>09:00 ~ 18:00</strong><br>토요일　<strong>09:00 ~ 13:00</strong><br>※ 휴게시간 12:00 ~ 14:00</p>
+        </div>
+        <a class="tile-link" href="#information">자세히 보기 ›</a>
+      </div>
+      <div class="info-tile location-tile">
+        <div class="tile-icon" style="color:#0866b2">⌖</div>
+        <div class="tile-content">
+          <h3>오시는 길</h3>
+          <p><strong>전라남도 목포시 부흥로 25</strong></p>
+          <div style="margin-top:12px"><a class="text-link" href="https://map.naver.com/p/search/전라남도%20목포시%20부흥로%2025" target="_blank" rel="noopener">네이버 지도 보기　›</a></div>
+        </div>
+      </div>
+      <div class="info-tile contact-tile">
+        <div class="tile-icon">☎</div>
+        <div class="tile-content">
+          <h3>진료 및 문의</h3>
+          <p><a href="tel:0619807500" style="font-size:25px;font-weight:900;color:white;text-decoration:none">061-980-7500</a><br>전화로 문의해 주세요.</p>
+        </div>
+        <a class="tile-link" href="tel:0619807500">전화 연결 ›</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section-heading"><div class="eyebrow">ABOUT US</div><h2>하당의원 소개</h2><p>환자 한 분 한 분의 이야기에 귀 기울이며 신뢰할 수 있는 진료를 위해 노력합니다.</p></div>
+      <div class="about-grid">
+        <div class="about-box"><h3>하당의원을 찾아주셔서 감사합니다.</h3><p>하당의원은 환자분의 상태와 필요를 세심하게 살피고, 이해하기 쉬운 설명과 정성을 다하는 진료를 위해 노력합니다.</p></div>
+        <div class="about-box"><h3>대표원장 인사말</h3><p>안녕하십니까. 하당의원을 찾아주셔서 감사합니다. 환자분들의 건강을 소중히 여기며, 늘 겸손하고 책임감 있는 자세로 진료에 임하겠습니다. 감사합니다.<br><strong>하당의원 대표원장 박용남</strong></p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-soft" id="facility">
+    <div class="container">
+      <div class="section-heading"><div class="eyebrow">OUR CLINIC</div><h2>하당의원 둘러보기</h2><p>하당의원의 실제 진료 공간과 시설을 소개합니다.</p></div>
+      <div class="gallery-grid">
+        <article class="gallery-item"><img src="clinic-corridor.jpg" alt="하당의원 내부 복도" loading="lazy"><div class="gallery-caption"><h3>쾌적한 병원 환경</h3><p>하당의원의 실제 내부 공간입니다.</p></div></article>
+        <article class="gallery-item"><img src="clinic-reception.jpg" alt="하당의원 접수 및 대기 공간" loading="lazy"><div class="gallery-caption"><h3>접수 및 대기 공간</h3><p>환자분들을 맞이하는 접수 및 대기 공간입니다.</p></div></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="pain-detail">
+    <div class="container">
+      <div class="section-heading"><div class="eyebrow">PAIN MEDICINE</div><h2>마취통증의학과 진료 안내</h2><p>목·어깨·허리 등 통증의 양상과 환자 상태를 확인하고 진료 방향을 상담합니다.</p></div>
+      <div class="about-box"><h3>통증 진료 상담</h3><p>통증 부위와 증상, 지속 기간 등을 의료진에게 말씀해 주세요. 진료 및 치료 방법은 진찰 후 환자 상태에 따라 결정됩니다. 구체적인 진료 항목과 시술 가능 여부는 전화 또는 내원 상담을 통해 확인해 주세요.</p></div>
+    </div>
+  </section>
+
+  <section class="section section-soft" id="skin-detail">
+    <div class="container">
+      <div class="section-heading"><div class="eyebrow">SKIN CARE</div><h2>피부 진료 안내</h2><p>피부 상태와 고민을 확인하고 필요한 진료 내용을 상담합니다.</p></div>
+      <div class="about-box"><h3>피부 진료 상담</h3><p>피부 관련 상담과 진료는 개인의 피부 상태 및 증상에 따라 달라질 수 있습니다. 구체적인 진료 항목과 시술 내용은 의료진 상담을 통해 확인해 주세요.</p></div>
+    </div>
+  </section>
+
+  <section class="section" id="information">
+    <div class="container">
+      <div class="section-heading"><div class="eyebrow">INFORMATION</div><h2>진료시간 및 오시는 길</h2><p>방문 전 진료시간과 접수 마감시간을 확인해 주세요.</p></div>
+      <div class="schedule-grid">
+        <div class="panel">
+          <h3>진료시간 안내</h3>
+          <div class="time-row"><span>평일 진료</span><strong>09:00 ~ 18:00</strong></div>
+          <div class="time-row"><span>평일 휴게시간</span><strong>12:00 ~ 14:00</strong></div>
+          <div class="time-row"><span>평일 접수마감</span><strong>17:30</strong></div>
+          <div class="time-row"><span>토요일 진료</span><strong>09:00 ~ 13:00</strong></div>
+          <div class="time-row"><span>토요일 접수마감</span><strong>12:30</strong></div>
+          <div class="time-row"><span>일요일·공휴일</span><strong class="closed">휴진</strong></div>
+          <p class="note">※ 평일 휴게시간은 12:00부터 14:00까지입니다. 접수 마감시간을 확인하고 내원해 주세요.</p>
+        </div>
+        <div class="panel">
+          <h3>오시는 길</h3>
+          <div class="time-row"><span>병원명</span><strong>하당의원</strong></div>
+          <div class="time-row"><span>주소</span><strong>전라남도 목포시 부흥로 25</strong></div>
+          <div class="time-row"><span>대표전화</span><strong><a href="tel:0619807500" style="color:#0866b2;text-decoration:none">061-980-7500</a></strong></div>
+          <p class="note">아래 버튼을 누르면 네이버 지도에서 주소를 확인하고 길찾기를 이용할 수 있습니다.</p>
+          <div class="map-actions">
+            <a class="map-btn" href="https://map.naver.com/p/search/전라남도%20목포시%20부흥로%2025" target="_blank" rel="noopener">네이버 지도에서 위치 확인</a>
+            <a class="map-btn secondary" href="tel:0619807500">전화 문의</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div><div class="footer-brand">✚ HaDang Hospital · 하당의원</div><p>전라남도 목포시 부흥로 25　|　대표전화 : 061-980-7500</p></div>
+    <div class="copyright">Copyright © HaDang Hospital. All Rights Reserved.</div>
+  </div>
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
 <script>
-// 모바일 메뉴 선택 시 자동 닫기
-document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
-  link.addEventListener('click', () => {
-    const menu = document.getElementById('menu');
-    const bsCollapse = bootstrap.Collapse.getInstance(menu);
-    if (bsCollapse) bsCollapse.hide();
+  const menuToggle = document.getElementById('menuToggle');
+  const mainNav = document.getElementById('mainNav');
+  menuToggle.addEventListener('click', () => {
+    const opened = mainNav.classList.toggle('open');
+    menuToggle.setAttribute('aria-expanded', String(opened));
+    menuToggle.textContent = opened ? '✕' : '☰';
   });
-});
+  mainNav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+    mainNav.classList.remove('open');
+    menuToggle.setAttribute('aria-expanded', 'false');
+    menuToggle.textContent = '☰';
+  }));
 </script>
-
 </body>
 </html>

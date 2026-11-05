@@ -308,6 +308,53 @@ footer {
     padding: 12px 0;
   }
 }
+  
+/* 하당의원 실제 사진 */
+.hero-photo {
+  width: 100%;
+  height: 340px;
+  object-fit: cover;
+  object-position: center 55%;
+  border-radius: 18px;
+  box-shadow: 0 15px 35px rgba(20,60,90,.15);
+}
+
+.clinic-gallery {
+  padding: 75px 0;
+  background: #fff;
+}
+
+.clinic-gallery img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 14px;
+  box-shadow: 0 8px 25px rgba(20,60,90,.10);
+}
+
+.clinic-gallery h3 {
+  color: #153b5b;
+  font-size: 20px;
+  font-weight: 700;
+  margin-top: 18px;
+}
+
+.clinic-gallery p {
+  color: #64748b;
+  font-size: 14px;
+}
+
+@media(max-width:768px) {
+  .hero-photo {
+    height: 260px;
+    margin-top: 25px;
+  }
+
+  .clinic-gallery img {
+    height: 250px;
+  }
+}
+
 </style>
 </head>
 
@@ -382,7 +429,46 @@ data-bs-toggle="collapse" data-bs-target="#menu">
 </div>
 
 <div class="col-lg-5">
-<div class="hero-symbol">+</div>
+<img
+src="KakaoTalk_20261023_141005877_10.jpg"
+alt="하당의원 실제 외관"
+class="hero-photo"></div>
+
+</div>
+</div>
+</section>
+
+<!-- 하당의원 실제 시설 사진 -->
+<section class="clinic-gallery">
+<div class="container">
+
+<div class="section-label">OUR CLINIC</div>
+<h2 class="section-title">하당의원을 소개합니다</h2>
+
+<p class="section-desc">
+편안하고 쾌적한 진료 환경을 위해 노력합니다.
+</p>
+
+<div class="row g-4">
+
+<div class="col-md-6">
+<img
+src="KakaoTalk_20261105_115950217_04.jpg"
+alt="하당의원 내부 복도"
+loading="lazy">
+
+<h3>쾌적한 병원 환경</h3>
+<p>편안하게 진료받으실 수 있는 하당의원의 내부 공간입니다.</p>
+</div>
+
+<div class="col-md-6">
+<img
+src="KakaoTalk_20261105_115950217.jpg"
+alt="하당의원 접수 및 대기 공간"
+loading="lazy">
+
+<h3>접수 및 대기 공간</h3>
+<p>환자분들을 위한 접수 및 대기 공간입니다.</p>
 </div>
 
 </div>
